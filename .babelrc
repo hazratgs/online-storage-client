@@ -10,7 +10,9 @@
   ],
   "plugins": [
     "transform-decorators-legacy",
-    "transform-async-to-generator"
+    "transform-async-to-generator",
+    "transform-runtime",
+    "transform-class-properties"
   ],
   "env": {
     "modules": false

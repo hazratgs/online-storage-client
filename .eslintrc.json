@@ -4,6 +4,7 @@
     "standard"
   ],
   "plugins": [
+    "class-property",
     "standard",
     "promise"
   ],
