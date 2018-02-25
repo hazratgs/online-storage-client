@@ -1,8 +1,25 @@
 {
   "name": "kurtuba-client",
+  "description": "A simple online store, an alternative to localStorage",
+  "keywords": [
+    "storage",
+    "key",
+    "value",
+    "localStorage",
+    "onlineStorage"
+  ],
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "build/kurtuba-client.min.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hazratgs/kurtuba-storage.git"
+  },
+  "author": {
+    "name": "hazratgs",
+    "email": "hazratgs@gmail.com",
+    "url": "https://github.com/hazratgs"
+  },
+  "license": "MIT",
   "scripts": {
     "start": "webpack --watch --config webpack/webpack.config.js --env production",
     "build": "webpack --config webpack/webpack.config.js --env production"
@@ -10,8 +27,6 @@
   "standard": {
     "parser": "babel-eslint"
   },
-  "author": "hazratgs",
-  "license": "ISC",
   "devDependencies": {
     "babel-core": "6.26.0",
     "babel-eslint": "^8.2.1",
