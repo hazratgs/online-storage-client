@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export class OnlineStorage {
+export class KurtubaStorage {
   constructor () {
     // Server address onlineStorage
     this.host = 'http://localhost:3199'
@@ -152,5 +152,5 @@ export class OnlineStorage {
   }
 }
 
-const onlineStorage = new OnlineStorage()
-export default onlineStorage
+const kurtubaStorage = new KurtubaStorage()
+export default kurtubaStorage
