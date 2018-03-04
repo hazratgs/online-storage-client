@@ -1,5 +1,5 @@
 ## kurtuba-client
-Это javascript обертка над api [kurtuba-storage](https://github.com/hazratgs/kurtuba-storage)
+💡Official JavaScript client [kurtuba-storage](https://github.com/hazratgs/kurtuba-storage)
 
 
 ### Features
