@@ -8,8 +8,8 @@
     "localStorage",
     "onlineStorage"
   ],
-  "version": "1.0.1",
-  "main": "build/kurtuba-client.min.js",
+  "version": "1.0.2",
+  "main": "build/kurtuba.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/hazratgs/kurtuba-storage.git"
