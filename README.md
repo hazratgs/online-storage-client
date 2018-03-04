@@ -137,5 +137,39 @@ onlineStorage.delete()
 ```
 </details>
 
+
+#### Get backup list storage
+```js
+onlineStorage.backup()
+```
+
+ <details>
+  <summary>View Response</summary>
+
+```js 		 
+{
+  "status":  true,
+  "data": ['Sun Mar 04 2018 19:39:42 GMT+0300 (MSK)']
+}
+```
+</details>
+
+#### Restoring the vault from a backup
+```js
+onlineStorage.backupRestore('Sun Mar 04 2018 19:39:42 GMT+0300 (MSK)')
+```
+
+ <details>
+  <summary>View Response</summary>
+
+```js 		 
+{
+  "status":  true,
+  "message": "Successfully restored"
+}
+```
+</details>
+
+
 ## License
 MIT
