@@ -9,7 +9,7 @@
     "onlineStorage"
   ],
   "version": "1.0.2",
-  "main": "build/kurtuba.js",
+  "main": "dist/kurtuba.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/hazratgs/kurtuba-storage.git"
