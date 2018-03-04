@@ -21,8 +21,8 @@
   },
   "license": "MIT",
   "scripts": {
-    "start": "webpack --watch --config webpack/webpack.config.js --env production",
-    "build": "webpack --config webpack/webpack.config.js --env production"
+    "start": "webpack --watch",
+    "build": "webpack"
   },
   "standard": {
     "parser": "babel-eslint"
@@ -51,7 +51,6 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "babel-polyfill": "^6.26.0",
-    "whatwg-fetch": "^2.0.3"
+    "babel-polyfill": "^6.26.0"
   }
 }

@@ -152,5 +152,5 @@ export class KurtubaStorage {
   }
 }
 
-const kurtubaStorage = new KurtubaStorage()
-export default kurtubaStorage
+const onlineStorage = new KurtubaStorage()
+export default onlineStorage

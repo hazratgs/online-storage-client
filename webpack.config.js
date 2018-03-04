@@ -1,15 +1,14 @@
 
-const { resolve } = require('path')
 const webpack = require('webpack')
+const { resolve } = require('path')
 
 module.exports = {
-  entry: {
-    app: [resolve(__dirname, '../src') + '/index.js']
-  },
+  entry: resolve(__dirname, './src') + '/index.js',
   output: {
-    path: resolve(__dirname, '../build'),
-    filename: 'kurtuba-client.min.js',
-    publicPath: '/'
+    path: resolve(__dirname, './dist'),
+    filename: 'kurtuba.js',
+    library: 'kurtuba',
+    libraryTarget:'umd'
   },
   module: {
     rules: [
@@ -22,11 +21,6 @@ module.exports = {
   },
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production')
-      }
-    }),
     new webpack.optimize.UglifyJsPlugin({
       comments: false
     })
