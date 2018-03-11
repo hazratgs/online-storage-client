@@ -10,12 +10,16 @@ export class KurtubaStorage {
 
     // Property to update token
     this.refreshToken = null
+
+    // Password for making changes to the storage
+    this.password = null
   }
 
   // Method for setting parameters
-  config ({ host, token } = {}) {
+  config ({ host = 'http://localhost:3199', token = null, password = null} = {}) {
     if (host) this.host = host
     if (token) this.token = token
+    if (password) this.password = password
   }
 
   // Server address with a token
@@ -28,14 +32,28 @@ export class KurtubaStorage {
     if (!this.token) throw new Error('Token not specified')
   }
 
+  // Headers
+  headers () {
+    const headers = {}
+    // Set password
+    if (this.password) headers.password = this.password
+
+    return headers
+  }
+
   // Creating a token
-  async create (domains = false, backup = false) {
+  async create ({ domains = null, backup = null, password = null } = {}) {
     try {
       // Request to create a token
-      const response = await axios.post(`${this.host}/create`, { domains: domains, backup: backup })
+      const response = await axios.post(`${this.host}/create`, { 
+        domains: domains, backup: backup, password: password
+      })
 
       // In case of error forming a token
       if (!response.data.status) throw new Error(response.data.description)
+
+      // Сохраняем пароль, для внесения изменений
+      if (password) this.password = password
 
       // Save the token to gain access to the repository
       this.token = response.data.data.token
@@ -92,7 +110,9 @@ export class KurtubaStorage {
   async set (data = {}) {
     try {
       this.checkingToken()
-      const response = await axios.post(`${this.url()}/set`, data)
+      const response = await axios.post(`${this.url()}/set`, data, {
+        headers: this.headers()
+      })
 
       // Data was not received
       if (!response.data.status) throw new Error(response.data.description)
@@ -107,7 +127,9 @@ export class KurtubaStorage {
   async remove (key) {
     try {
       this.checkingToken()
-      const response = await axios.delete(`${this.url()}/remove/${key}`)
+      const response = await axios.delete(`${this.url()}/remove/${key}`, {
+        headers: this.headers()
+      })
 
       return response.data.status
     } catch (e) {
@@ -119,7 +141,9 @@ export class KurtubaStorage {
   async delete () {
     try {
       this.checkingToken()
-      const response = await axios.delete(`${this.url()}/delete`)
+      const response = await axios.delete(`${this.url()}/delete`, {
+        headers: this.headers()
+      })
 
       return response.data.status
     } catch (e) {
@@ -131,7 +155,9 @@ export class KurtubaStorage {
   async backup () {
     try {
       this.checkingToken()
-      const response = await axios.post(`${this.url()}/backup`)
+      const response = await axios.post(`${this.url()}/backup`, {
+        headers: this.headers()
+      })
 
       return response.data.data
     } catch (e) {
@@ -143,7 +169,9 @@ export class KurtubaStorage {
   async backupRestore (key) {
     try {
       this.checkingToken()
-      const response = await axios.post(`${this.url()}/backup/${key}`)
+      const response = await axios.post(`${this.url()}/backup/${key}`, {
+        headers: this.headers()
+      })
 
       return response.data.data
     } catch (e) {
