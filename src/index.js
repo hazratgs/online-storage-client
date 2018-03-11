@@ -3,7 +3,7 @@ import axios from 'axios'
 export class KurtubaStorage {
   constructor () {
     // Server address onlineStorage
-    this.host = 'http://localhost:3199'
+    this.host = 'https://api.kurtuba.ru'
 
     // Token for access to the storage
     this.token = null
@@ -16,7 +16,7 @@ export class KurtubaStorage {
   }
 
   // Method for setting parameters
-  config ({ host = 'http://localhost:3199', token = null, password = null} = {}) {
+  config ({ host = 'https://api.kurtuba.ru', token = null, password = null} = {}) {
     if (host) this.host = host
     if (token) this.token = token
     if (password) this.password = password
