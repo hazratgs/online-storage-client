@@ -16,7 +16,7 @@ export class KurtubaStorage {
   }
 
   // Method for setting parameters
-  config ({ host = 'https://api.kurtuba.ru', token = null, password = null} = {}) {
+  config ({ host = 'https://api.kurtuba.ru', token = null, password = null } = {}) {
     if (host) this.host = host
     if (token) this.token = token
     if (password) this.password = password
@@ -45,8 +45,10 @@ export class KurtubaStorage {
   async create ({ domains = null, backup = null, password = null } = {}) {
     try {
       // Request to create a token
-      const response = await axios.post(`${this.host}/create`, { 
-        domains: domains, backup: backup, password: password
+      const response = await axios.post(`${this.host}/create`, {
+        domains: domains,
+        backup: backup,
+        password: password
       })
 
       // In case of error forming a token
