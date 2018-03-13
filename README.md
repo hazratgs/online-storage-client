@@ -1,5 +1,6 @@
 ## kurtuba-client
 [![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/kurtuba-client)
+
 💡Official JavaScript client [kurtuba-storage](https://github.com/hazratgs/kurtuba-storage)
 
 
