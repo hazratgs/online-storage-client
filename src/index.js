@@ -85,7 +85,7 @@ export class OnlineStorage {
   }
 
   // Method for obtaining value by key
-  async get (key) {
+  async get (key = '') {
     try {
       this.checkingToken()
       const response = await axios.get(`${this.url()}/${key}`)
@@ -93,18 +93,6 @@ export class OnlineStorage {
       return response.data.data
     } catch (e) {
       return e
-    }
-  }
-
-  // We completely fill the storage
-  async getAll () {
-    try {
-      this.checkingToken()
-      const response = await axios.get(`${this.url()}`)
-
-      return response.data.data
-    } catch (e) {
-      console.log(e.message)
     }
   }
 
