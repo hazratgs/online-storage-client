@@ -1,18 +1,22 @@
 {
-  "name": "kurtuba-client",
-  "description": "A simple online store, an alternative to localStorage",
+  "name": "online-storage",
+  "description": "⚡️Online implementation of localStorage",
   "keywords": [
     "storage",
     "key",
     "value",
     "localStorage",
-    "onlineStorage"
+    "onlineStorage",
+    "online",
+    "api",
+    "rest",
+    "db"
   ],
-  "version": "2.0.0",
-  "main": "dist/kurtuba.js",
+  "version": "3.0.0",
+  "main": "dist/onlineStorage.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hazratgs/kurtuba-storage.git"
+    "url": "https://github.com/hazratgs/online-storage-client.git"
   },
   "author": {
     "name": "hazratgs",

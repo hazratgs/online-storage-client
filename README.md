@@ -1,5 +1,5 @@
-## kurtuba-client
-[![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/kurtuba-client)
+## online-storage
+[![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/online-storage)
 
 The library for working with online storage is similar to localStorage
 
@@ -16,14 +16,14 @@ The library for working with online storage is similar to localStorage
 
 ## Install
 
-    npm install kurtuba-client --save
+    npm install online-storage --save
 
 #### Browser
-kurtuba-client work on all browsers.
+online-storage work on all browsers.
 
 #### Using
 
-    import onlineStorage from 'kurtuba-client'
+    import onlineStorage from 'online-storage'
 
 ## API
 

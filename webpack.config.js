@@ -6,8 +6,8 @@ module.exports = {
   entry: resolve(__dirname, './src') + '/index.js',
   output: {
     path: resolve(__dirname, './dist'),
-    filename: 'kurtuba.js',
-    library: 'kurtuba',
+    filename: 'onlineStorage.js',
+    library: 'onlineStorage',
     libraryTarget:'umd'
   },
   module: {
