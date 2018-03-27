@@ -12,7 +12,7 @@
     "rest",
     "db"
   ],
-  "version": "3.0.0",
+  "version": "3.0.1",
   "main": "dist/onlineStorage.js",
   "repository": {
     "type": "git",
