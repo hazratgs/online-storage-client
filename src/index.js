@@ -141,11 +141,25 @@ export class OnlineStorage {
     }
   }
 
-  // We get the list of backup copies
+  // Create backup
   async backup () {
     try {
       this.checkingToken()
       const response = await axios.post(`${this.url()}/backup`, {
+        headers: this.headers()
+      })
+
+      return response.data.data
+    } catch (e) {
+      return e
+    }
+  }
+
+  // We get the list of backup copies
+  async backupList () {
+    try {
+      this.checkingToken()
+      const response = await axios.get(`${this.url()}/backup/list`, {
         headers: this.headers()
       })
 
