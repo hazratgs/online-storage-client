@@ -65,7 +65,7 @@ export class OnlineStorage {
 
       return response
     } catch (e) {
-      console.log(e.message)
+      return e
     }
   }
 
@@ -80,7 +80,7 @@ export class OnlineStorage {
 
       return response
     } catch (e) {
-      console.log(e.message)
+      return e
     }
   }
 
@@ -88,11 +88,11 @@ export class OnlineStorage {
   async get (key) {
     try {
       this.checkingToken()
-      const response = await axios.get(`${this.url()}/get/${key}`)
+      const response = await axios.get(`${this.url()}/${key}`)
 
       return response.data.data
     } catch (e) {
-      console.log(e.message)
+      return e
     }
   }
 
@@ -100,7 +100,7 @@ export class OnlineStorage {
   async getAll () {
     try {
       this.checkingToken()
-      const response = await axios.get(`${this.url()}/getAll`)
+      const response = await axios.get(`${this.url()}`)
 
       return response.data.data
     } catch (e) {
@@ -112,7 +112,7 @@ export class OnlineStorage {
   async set (data = {}) {
     try {
       this.checkingToken()
-      const response = await axios.post(`${this.url()}/set`, data, {
+      const response = await axios.post(`${this.url()}`, data, {
         headers: this.headers()
       })
 
@@ -129,7 +129,7 @@ export class OnlineStorage {
   async remove (key) {
     try {
       this.checkingToken()
-      const response = await axios.delete(`${this.url()}/remove/${key}`, {
+      const response = await axios.delete(`${this.url()}/${key}`, {
         headers: this.headers()
       })
 
@@ -143,7 +143,7 @@ export class OnlineStorage {
   async delete () {
     try {
       this.checkingToken()
-      const response = await axios.delete(`${this.url()}/delete`, {
+      const response = await axios.delete(`${this.url()}`, {
         headers: this.headers()
       })
 
