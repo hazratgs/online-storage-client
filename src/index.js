@@ -109,7 +109,7 @@ export class OnlineStorage {
 
       return response.data.data
     } catch (e) {
-      console.log(e.message)
+      return e
     }
   }
 
@@ -123,7 +123,7 @@ export class OnlineStorage {
 
       return response.data.status
     } catch (e) {
-      console.log(e.message)
+      return e
     }
   }
 
@@ -137,7 +137,7 @@ export class OnlineStorage {
 
       return response.data.status
     } catch (e) {
-      console.log(e.message)
+      return e
     }
   }
 
@@ -151,7 +151,7 @@ export class OnlineStorage {
 
       return response.data.data
     } catch (e) {
-      console.log(e.message)
+      return e
     }
   }
 
@@ -165,7 +165,7 @@ export class OnlineStorage {
 
       return response.data.data
     } catch (e) {
-      console.log(e.message)
+      return e
     }
   }
 }
