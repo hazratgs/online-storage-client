@@ -11,6 +11,7 @@ The library for working with online storage is similar to localStorage
  - Set key/value
  - Remove element it storage
  - Delete storage
+ - Create backup
  - Get backup list
  - Restoring the vault from a backup
 
@@ -37,12 +38,9 @@ onlineStorage.create()
 
 ```js 		 
 {
-  "status":  true,
-  "data":{
-    "token": "002cac23-aa8b-4803-a94f-3888020fa0df",
-    "connect": "5bf365e0-1fc0-11e8-85d2-3f7a9c4f742e",
-    "refreshToken": "5bf365e0-1fc0-11e8-85d2-3f7a9c4f742e"
-  }
+  "token": "002cac23-aa8b-4803-a94f-3888020fa0df",
+  "connect": "5bf365e0-1fc0-11e8-85d2-3f7a9c4f742e",
+  "refreshToken": "5bf365e0-1fc0-11e8-85d2-3f7a9c4f742e"
 }
 ```
 </details>
@@ -77,16 +75,13 @@ onlineStorage.get('name')
   <summary>View Response</summary>
 
 ```js 		 
-{
-  "status":  true,
-  "data": "hazratgs"
-}
+"hazratgs"
 ```
 </details>
 
 #### Get all storage
 ```js
-onlineStorage.getAll()
+onlineStorage.get()
 ```
 
  <details>
@@ -94,13 +89,10 @@ onlineStorage.getAll()
 
 ```js 		 
 {
-  "status":  true,
-  "data": {
-    name: 'hazratgs',
-    age: 25,
-    city: 'Derbent'
-    skills: ['javascript', 'react+redux', 'nodejs', 'mongodb']
-  }
+  name: 'hazratgs',
+  age: 25,
+  city: 'Derbent'
+  skills: ['javascript', 'react+redux', 'nodejs', 'mongodb']
 }
 ```
 </details>
@@ -138,10 +130,24 @@ onlineStorage.delete()
 ```
 </details>
 
+#### Create backup
+```js
+onlineStorage.backup()
+```
+
+ <details>
+  <summary>View Response</summary>
+
+```js 		 
+{
+  "status":  true
+}
+```
+</details>
 
 #### Get backup list storage
 ```js
-onlineStorage.backup()
+onlineStorage.backupList()
 ```
 
  <details>
